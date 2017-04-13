@@ -5,8 +5,8 @@ const driver = new Builder()
     .forBrowser('chrome')
     .build();
 
-driver.get('http://www.google.com/ncr');
-driver.findElement(By.name('q')).sendKeys('webdriver');
-driver.findElement(By.name('btnG')).click();
-driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+driver.get('http://localhost:8000/sync.html');
+driver.findElement(By.name('input')).sendKeys('webdriver');
+driver.findElement(By.name('btn')).click();
+driver.wait(until.titleIs('webdriver - testing...'), 1000);
 driver.quit();

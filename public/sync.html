@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Testing - sync</title>
+    <script>
+        function changeTitle(title) {
+          var inputValue = document.querySelector('[name="input"]').value;
+          document.title = `${inputValue} - ${title} lll`;
+        }
+    </script>
+  </head>
+  <body>
+    <input type="text" name="input" value="">
+    <button id="btn" type="button" name="btn" onclick="changeTitle('testing...')">
+      Change Title
+    </button>
+
+  </body>
+</html>
