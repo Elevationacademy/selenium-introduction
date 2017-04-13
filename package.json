@@ -1,13 +1,21 @@
 {
-  "name": "testing",
+  "name": "testing-demo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Introduction to Selenium and Asynchronous testing",
+  "keywords": ["Selenium", "Test", "Asynchronous Tests"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Elevationacademy/selenium-introduction.git"
+  },
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "async": "node selenium-async.js",
+    "sync": "node selenium-sync.js",
     "test:jasmine": "node node_modules/jasmine/bin/jasmine.js",
     "test:mocha": "node node_modules/mocha/bin/mocha selenium-mocha.js"
   },
-  "author": "",
+  "author": "ronen-e",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2",

@@ -15,11 +15,10 @@ describe('Title', function() {
     driver.get('http://localhost:8000/sync.html')
     driver.findElement(By.name('input')).sendKeys('webdriver');
     driver.findElement(By.name('btn')).click();
-    // driver.wait(until.titleIs('webdriver - testing...'), 8000)
     driver.getTitle()
     .then((title) => {
       expect(title).toBe('webdriver - testing...');
       done();
     });
-  }, 10000);
+  }, 20000);
 });
