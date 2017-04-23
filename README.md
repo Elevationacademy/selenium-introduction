@@ -1,6 +1,12 @@
 # Testing Demo
 
 ## Start
+
+### Install Dependencies
+```bash
+npm install
+```
+
 ### Run server
 ```bash
 npm start
