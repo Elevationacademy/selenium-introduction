@@ -10,16 +10,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "async": "node selenium-async.js",
-    "sync": "node selenium-sync.js",
-    "test:jasmine": "node node_modules/jasmine/bin/jasmine.js",
-    "test:mocha": "node node_modules/mocha/bin/mocha selenium-mocha.js"
+    "test:async": "node selenium-async.js",
+    "test:sync": "node selenium-sync.js",
+    "test:jasmine": "node_modules/jasmine/bin/jasmine.js",
+    "test:mocha": "node_modules/mocha/bin/mocha selenium-mocha.js"
   },
   "author": "ronen-e",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2",
-    "body-parser": "^1.17.1"
+    "express": "^4.15.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",

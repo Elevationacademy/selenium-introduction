@@ -2,32 +2,37 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine-html.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/boot.min.js"></script>
+  <meta content="width=device-width" name="viewport">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine-html.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/boot.min.js" type="text/javascript"></script>
   <title>Jasmine async demo</title>
 </head>
 <body>
   <script>
-  describe("Asynchronous tests", function() {
+    describe("Jasmine Asynchronous Testing", function() {
 
-    it("use the done method", function(done) {
-      setTimeout(function(){
-        expect(true).toBe(true);
-        done();
-      }, 1500);
+      //Test 1 - showing how to use the done method
+      it("use the done method", function(done) {
+        Promise.resolve('hello world').then(function(response) {
+          expect(response).toContain('world');
+          done();
+        });
+      });
+
+      /* Test 2 - Setting up a 9 second test using setTimeout */
+      /* There is normally a default time limit for each test of just 5 sec */
+      /* Therefore we need to override the default timer for this test */
+      const DEFAULT_TIMEOUT = 10000;
+      const RUNTIME = 9000;
+      it("takes about 9000 ms", function(done) {
+        setTimeout(function() {
+          expect(true).toBe(true);
+          done();
+        }, RUNTIME);
+      }, DEFAULT_TIMEOUT);
     });
-
-    /* override the default 5 second timeout */
-    it("takes a long time", function(done) {
-      setTimeout(function() {
-        done();
-      }, 9000);
-    }, 10000);
-
-  });
   </script>
 </body>
 </html>
