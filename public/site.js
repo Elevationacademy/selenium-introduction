@@ -15,7 +15,7 @@ function addCatImage() {
       img.src = images[catIndex];
       img.id = 'cat_' + catIndex;
       img.onclick = () => setBackgroundImage(img.src);
-      document.body.append(img);
+      document.body.appendChild(img);
       catIndex++;
   }
 }
